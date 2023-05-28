@@ -1,0 +1,9 @@
+.idea
+db.sqlite3
+*.pyc
+__pycache__
+logs
+myenv
+node_modules
+.DS_Store
+
