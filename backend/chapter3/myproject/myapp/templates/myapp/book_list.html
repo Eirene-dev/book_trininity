@@ -1,0 +1,9 @@
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+
+<h2>책 목록</h2>
+<ul>
+  {% for book in books %}
+    <li>{{ book.title }} - {{ book.author }}</li>
+  {% endfor %}
+</ul>
