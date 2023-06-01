@@ -3,6 +3,8 @@
 
 - https://wikidocs.net/book/9596
 
+## 예제 프로젝트
+- https://github.com/Eirene-dev/book_trinity_project
 
 
 ![책 표지](https://github.com/Eirene-dev/tradingview_pinescript_examples/blob/main/img/book_cover4.png?raw=true)
