@@ -3,38 +3,32 @@ import {
   ChakraProvider,
   Box,
   Text,
-  Link,
   VStack,
-  Code,
   Grid,
   theme,
+  Avatar,
+  Flex
 } from '@chakra-ui/react';
 import { ColorModeSwitcher } from './ColorModeSwitcher';
-import { Logo } from './Logo';
+import { Heading } from '@chakra-ui/react'
 import MenuBar from "./MenuBar";
 import ChatScreen from "./ChatScreen";
+import FineTuningScreen from './FineTuningScreen';
+import Settings from './Settings';
+
+
 
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 function HomePage() {
   return (
     <Box textAlign="center" fontSize="xl">
-      <Grid minH="100vh" p={3}>
-        <ColorModeSwitcher justifySelf="flex-end" />
-        <VStack spacing={8}>
-          <Logo h="40vmin" pointerEvents="none" />
-          <Text>
-            Edit <Code fontSize="xl">src/App.js</Code> and save to reload.
+      <Grid minH="100vh" p={2}>
+      <VStack spacing={2}>
+        <Heading>Fine-tuning Chat</Heading>
+        <Text>
+          You can use ChatGPT with fine-tuned models.
           </Text>
-          <Link
-            color="teal.500"
-            href="https://chakra-ui.com"
-            fontSize="2xl"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn Chakra
-          </Link>
         </VStack>
       </Grid>
     </Box>
@@ -45,10 +39,21 @@ function App() {
   return (
     <ChakraProvider theme={theme}>
       <Router>
-        <MenuBar />
+        <Flex justifyContent="space-between" alignItems="center" mb={4}>
+          <Flex alignItems="center">
+            <MenuBar />
+            <Text ml={2}>Fine Chat</Text>
+          </Flex>
+          <Flex alignItems="center">
+            <Avatar size='sm' name='Kent Dodds' src='https://bit.ly/kent-c-dodds' />
+            <ColorModeSwitcher justifySelf="flex-end" ml={2} />
+          </Flex>
+        </Flex>
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/chat" element={<ChatScreen />} />
+          <Route path="/finetuning" element={<FineTuningScreen />} />
+          <Route path="/settings" element={<Settings />} />
         </Routes>
       </Router>
     </ChakraProvider>
