@@ -12,11 +12,9 @@ import {
 import { ColorModeSwitcher } from './ColorModeSwitcher';
 import { Heading } from '@chakra-ui/react'
 import MenuBar from "./MenuBar";
-import ChatScreen from "./ChatScreen";
-import FineTuningScreen from './FineTuningScreen';
+import Chat from "./Chat";
+import FineTuning from './FineTuning';
 import Settings from './Settings';
-
-
 
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
@@ -51,8 +49,8 @@ function App() {
         </Flex>
         <Routes>
           <Route path="/" element={<HomePage />} />
-          <Route path="/chat" element={<ChatScreen />} />
-          <Route path="/finetuning" element={<FineTuningScreen />} />
+          <Route path="/chat" element={<Chat />} />
+          <Route path="/finetuning" element={<FineTuning />} />
           <Route path="/settings" element={<Settings />} />
         </Routes>
       </Router>
